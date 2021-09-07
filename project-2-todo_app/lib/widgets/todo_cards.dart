@@ -8,7 +8,7 @@ class TodoCard extends StatelessWidget {
   final int index;
 
   TodoCard({
-    required this.title,
+    required this.title, 
     required this.completed,
     required this.updateTodoCompletions,
     required this.index
@@ -22,44 +22,30 @@ class TodoCard extends StatelessWidget {
       },
       child: FractionallySizedBox(
         widthFactor: 0.9,
-        child: Container(
-          child: Card(
-            child: Container(
-              padding: EdgeInsets.all(20),
-              height: 125,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Card(
+          child: Container(
+            padding: EdgeInsets.all(20),
+            height: 125,
+            child: Center(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Container(
-                          child: IconButton(
-                            onPressed: null, 
-                            icon: Icon(
-                              completed ? Icons.check : Icons.close,
-                              color: completed ? Colors.green : Colors.red,
-                            ),
-                            color: Colors.cyan
-                          )
-                        )
-                      ],
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
+                  Icon(
+                    completed ? Icons.check : Icons.close,
+                    color: completed ? Colors.green : Colors.red,
+                  )
                 ],
               ),
             )
           ),
-        )
+        ),
       ),
     );
   }

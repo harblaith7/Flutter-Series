@@ -6,8 +6,8 @@ class Todo {
   bool completed;
 
   Todo({
-    required this.id, 
-    required this.title, 
-    required this.completed,
+    required this.id,
+    required this.title,
+    required this.completed
   });
 }
